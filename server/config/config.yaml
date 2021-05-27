@@ -1,0 +1,47 @@
+# MyBlog Global Configuration
+
+# jwt configuration
+jwt:
+  signing-key: 'IloveU'
+  expires-time: 604800
+  buffer-time: 86400
+
+# Zap logger configuration
+zap:
+  level: 'info'
+  format: 'console'
+  prefix: '[MY-BLOG]'
+  director: 'log'
+  link-name: 'latest_log'
+  show-line: true
+  encode-level: 'LowercaseColorLevelEncoder'
+  stacktrace-key: 'stacktrace'
+  log-in-console: true
+
+# Redis configuration
+redis:
+  db: 0
+  addr: '127.0.0.1:6379'
+  password: ''
+
+# Captcha configuration
+captcha:
+  key-long: 6
+  img-width: 240
+  img-heigth: 80
+
+# Mysql configuration
+mysql:
+  path: '127.0.0.1:3379'
+  config: ''
+  db-name: 'myblog'
+  username: 'root'
+  password: '123456'
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: false
+  log-zap: ''
+
+# Local configuration
+local:
+  path: 'upload/file'
