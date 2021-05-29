@@ -6,6 +6,7 @@ import (
 	"go.uber.org/zap"
 	"gorm.io/gorm"
 	"myblog/config"
+	"time"
 )
 
 var (
@@ -15,3 +16,10 @@ var (
 	GVP     *viper.Viper
 	GLOG    *zap.Logger
 )
+
+type GMODEL struct {
+	ID        uint `gorm:"primaryKey;unique;autoIncrement"`
+	CreateAt  time.Time
+	UpdateAt  time.Time
+	DeletedAt gorm.DeletedAt
+}

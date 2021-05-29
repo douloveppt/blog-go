@@ -34,15 +34,15 @@ captcha:
 
 # Mysql configuration
 mysql:
-  path: '127.0.0.1:3379'
-  config: ''
+  path: '127.0.0.1:3306'
+  config: 'charset=utf8mb4&parseTime=True&loc=Local'
   db-name: 'myblog'
   username: 'root'
   password: '123456'
   max-idle-conns: 10
   max-open-conns: 100
   log-mode: false
-  log-zap: ''
+  log-zap: 'info'
 
 # Local configuration
 local:

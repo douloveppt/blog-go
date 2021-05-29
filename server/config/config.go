@@ -46,11 +46,11 @@ type Captcha struct {
 type Mysql struct {
 	Path         string `mapstructure:"path" json:"path" yaml:"path"`                             //服务地址：端口
 	Config       string `mapstructure:"config" json:"config" yaml:"config"`                       //配置
-	Dbname       string `mapstructure:"dbname" json:"dbname" yaml:"dbname"`                       //数据库名
+	Dbname       string `mapstructure:"db-name" json:"dbName" yaml:"db-name"`                       //数据库名
 	Username     string `mapstructure:"username" json:"username" yaml:"username"`                 //用户名
 	Password     string `mapstructure:"password" json:"password" yaml:"password"`                 //密码
-	MaxIdleConns int    `mapstructure:"max_idle-conns" json:"maxIdleConns" yaml:"max-idle-conns"` //
-	MaxOpenCoons int    `mapstructure:"max_open-coons" json:"maxOpenCoons" yaml:"max-open-coons"` //
+	MaxIdleConns int    `mapstructure:"max-idle-conns" json:"maxIdleConns" yaml:"max-idle-conns"` //
+	MaxOpenConns int    `mapstructure:"max-open-conns" json:"maxOpenConns" yaml:"max-open-conns"` //
 	LogMode      bool   `mapstructure:"log-mode" json:"logMode" yaml:"log-mode"`                  //
 	LogZap       string `mapstructure:"log-zap" json:"logZap" yaml:"log-zap"`                     //
 }
