@@ -14,9 +14,11 @@ zap:
   director: 'log'
   link-name: 'latest_log'
   show-line: true
-  encode-level: 'LowercaseColorLevelEncoder'
+  encode-level: 'CapitalColorLevelEncoder'
   stacktrace-key: 'stacktrace'
   log-in-console: true
+  with-max-age: 7*24
+  rotation-time: 7
 
 # Redis configuration
 redis:

@@ -1,5 +1,7 @@
 package config
 
+import "time"
+
 type Server struct {
 	JWT     JWT     `mapstructure:"jwt" json:"jwt" yaml:"jwt"`
 	Zap     Zap     `mapstructure:"zap" json:"zap" yaml:"zap"`
@@ -16,15 +18,17 @@ type JWT struct {
 }
 
 type Zap struct {
-	Level         string `json:"level" yaml:"level" mapstructure:"level"`                           //日志级别
-	Format        string `json:"format" yaml:"format" mapstructure:"format"`                        //日志格式
-	Prefix        string `json:"prefix" yaml:"prefix" mapstructure:"prefix"`                        //日志前缀
-	Director      string `json:"director" yaml:"director" mapstructure:"director"`                  //日志目录
-	LinkName      string `json:"linkName" yaml:"link-name" mapstructure:"link-name"`                //软连接名称
-	ShowLine      bool   `json:"showLine" yaml:"showLine" mapstructure:"show-line"`                 //显示行
-	EncodeLevel   string `json:"encodeLevel" yaml:"encode-level" mapstructure:"encode-level"`       //编码级
-	StacktraceKey string `json:"stacktraceKey" yaml:"stacktrace-key" mapstructure:"stacktrace-key"` //栈名
-	LogInConsole  bool   `json:"logInConsole" yaml:"log-in-console" mapstructure:"log-in-console"`  //是否输出控制台
+	Level         string        `json:"level" yaml:"level" mapstructure:"level"`                           //日志级别
+	Format        string        `json:"format" yaml:"format" mapstructure:"format"`                        //日志格式
+	Prefix        string        `json:"prefix" yaml:"prefix" mapstructure:"prefix"`                        //日志前缀
+	Director      string        `json:"director" yaml:"director" mapstructure:"director"`                  //日志目录
+	LinkName      string        `json:"linkName" yaml:"link-name" mapstructure:"link-name"`                //软连接名称
+	ShowLine      bool          `json:"showLine" yaml:"showLine" mapstructure:"show-line"`                 //显示行
+	EncodeLevel   string        `json:"encodeLevel" yaml:"encode-level" mapstructure:"encode-level"`       //编码级
+	StacktraceKey string        `json:"stacktraceKey" yaml:"stacktrace-key" mapstructure:"stacktrace-key"` //栈名
+	LogInConsole  bool          `json:"logInConsole" yaml:"log-in-console" mapstructure:"log-in-console"`  //是否输出控制台
+	MaxAge        time.Duration `json:"maxAge" yaml:"max-age" mapstructure:"max-age"`                      //保存时间
+	RotationTime  time.Duration `json:"rotationTime" yaml:"rotation-time" mapstructure:"rotation-time"`    //切割时间
 }
 
 type Redis struct {
