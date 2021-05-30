@@ -1,0 +1,14 @@
+info:
+  contact: {}
+paths:
+  /v1/base/login:
+    post:
+      responses:
+        "200":
+          description: '{"code":0,"msg":"success","data":"login"}'
+          schema:
+            type: string
+      summary: 用户登录
+      tags:
+      - Base
+swagger: "2.0"
