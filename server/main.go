@@ -17,4 +17,5 @@ func main() {
 	} else {
 		global.GLOG.Panic("init database failed")
 	}
+	core.RunServer()
 }

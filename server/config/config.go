@@ -9,6 +9,7 @@ type Server struct {
 	Captcha Captcha `mapstructure:"captcha" json:"captcha" yaml:"captcha"`
 	Mysql   Mysql   `mapstructure:"mysql" json:"mysql" yaml:"mysql"`
 	Local   Local   `mapstructure:"local" json:"local" yaml:"local"`
+	System  System  `mapstructure:"system" json:"system" yaml:"system"`
 }
 
 type JWT struct {
@@ -46,7 +47,7 @@ type Captcha struct {
 type Mysql struct {
 	Path         string `mapstructure:"path" json:"path" yaml:"path"`                             //服务地址：端口
 	Config       string `mapstructure:"config" json:"config" yaml:"config"`                       //配置
-	Dbname       string `mapstructure:"db-name" json:"dbName" yaml:"db-name"`                       //数据库名
+	Dbname       string `mapstructure:"db-name" json:"dbName" yaml:"db-name"`                     //数据库名
 	Username     string `mapstructure:"username" json:"username" yaml:"username"`                 //用户名
 	Password     string `mapstructure:"password" json:"password" yaml:"password"`                 //密码
 	MaxIdleConns int    `mapstructure:"max-idle-conns" json:"maxIdleConns" yaml:"max-idle-conns"` //
@@ -61,4 +62,12 @@ func (m *Mysql) Dsn() string {
 
 type Local struct {
 	Path string `mapstructure:"path" json:"path" yaml:"path"` //本地文件路径
+}
+
+type System struct {
+	Env           string `mapstructure:"env" json:"env" yaml:"env"`
+	Addr          int    `mapstructure:"addr" json:"addr" yaml:"addr"`
+	DbType        string `mapstructure:"db-type" json:"dbType" yaml:"db-type"`
+	OssType       string `mapstructure:"oss-type" json:"ossType" yaml:"oss-type"`
+	UseMultiPoint bool   `mapstructure:"use-multi-point" json:"useMultiPoint" yaml:"use-multi-point"`
 }
